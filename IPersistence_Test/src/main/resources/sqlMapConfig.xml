@@ -1,0 +1,12 @@
+<configuration>
+
+    <dataSource>
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql:///guli"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="085231aA."></property>
+    </dataSource>
+
+    <!--  mapper.xml的全路径  -->
+    <mapper resource="UserMapper.xml"></mapper>
+</configuration>

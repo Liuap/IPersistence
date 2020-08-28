@@ -1,0 +1,12 @@
+<mapper namespace="com.pal.dao.IUserDao">
+
+    <!--  sql的唯一标识：namespace.id,利用反射指定参数和返回值的实体类对应  -->
+    <select id="findAll" resultType="com.pal.pojo.User">
+        select * from user
+    </select>
+
+    <select id="findByCondition" resultType="com.pal.pojo.User" paramterType="com.pal.pojo.User">
+        select * from user where id = #{id}
+    </select>
+
+</mapper>

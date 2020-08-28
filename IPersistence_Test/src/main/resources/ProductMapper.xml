@@ -1,0 +1,12 @@
+<mapper namespace="product">
+
+    <!--  sql的唯一标识：namespace.id,利用反射指定参数和返回值的实体类对应  -->
+    <select id="selectList" resultType="com.pal.pojo.product">
+        select * from edu_chapter
+    </select>
+
+    <select id="selectOne" resultType="com.pal.pojo.product" paramterType="com.pal.pojo.User">
+        select * from edu_chapter where id = #{}
+    </select>
+
+</mapper>
