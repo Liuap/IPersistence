@@ -36,10 +36,10 @@ public class XMLConfigBuilder {
         Document document = new SAXReader().read(inputStream);
         //根对象 <configuration>
         Element rootElement = document.getRootElement();
-        // selectNodes("//...") 根对象范围内的搜索,list内是每条property
+        // selectNodes("//...") 根对象范围内的搜索,list内是每条property（连接配置）
         List<Element> list = rootElement.selectNodes("//property");
 
-        //得到结果并封装成key：value
+        //数据库连接配置信息封装成key：value
         Properties properties = new Properties();
         for (Element element : list) {
             String name = element.attributeValue("name");

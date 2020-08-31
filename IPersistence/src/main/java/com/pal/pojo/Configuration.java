@@ -21,8 +21,8 @@ public class Configuration {
 
     /**
      * MappedStatement的集合
-     * key：Statement的id：namespace.id,用来标识唯一的sql
-     * value：封装好的mappedStatement对象
+     * key：Statement的id：namespace.id（方法名）,用来标识唯一的sql
+     * value：封装好的mappedStatement对象（id,传入传出参数,sql）
      */
     Map<String,MappedStatement> mappedStatementMap = new HashMap<>();
 }

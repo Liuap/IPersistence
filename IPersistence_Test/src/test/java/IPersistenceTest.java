@@ -20,8 +20,12 @@ public class IPersistenceTest {
 
     @Test
     public  void test() throws Exception {
+
+        //1.Resources工具类，配置文件的加载，把配置文件加载为字节输入流
         InputStream resourceAsSteam = Resources.getResourceAsSteam("sqlMapConfig.xml");
+        //2.解析配置文件，并创建SqlSessionFactory工厂
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsSteam);
+        //3.生产SqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
         //调用
@@ -30,7 +34,7 @@ public class IPersistenceTest {
         user.setUsername("Tim");
 
 
-        //获取代理对象
+        //获取代理对象                                                                                   
         IUserDao userDao = sqlSession.getMapper(IUserDao.class);
         //代理对象调用接口任一方法都会调用invoke
 //        User oneRes = userDao.findByCondition(user);
